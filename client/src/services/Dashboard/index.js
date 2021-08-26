@@ -1,5 +1,11 @@
 import axios from '../../plugins/index';
 
+const trelloStorage = localStorage.getItem('trello') || '{}';
+
+const {token} = JSON.parse(trelloStorage)
+console.log(token)
+
+const headers = {'Authorization': token}
 
 const dashboard = {
     list: async () => {
@@ -27,7 +33,7 @@ const dashboard = {
 
     save: async (id, name) => {
         try {
-            return await axios().put(`dashboard/${id}`, {name});
+            return await axios().put(`dashboard/${id}`, {name}, {headers});
         } catch (error) {
             return {
                 status : 'error',
@@ -37,7 +43,7 @@ const dashboard = {
     },
     add: async (name) => {
         try {
-            const {data} = await axios().post('dashboard/create', {name});
+            const {data} = await axios().post('dashboard/create', {name}, {headers});
             return data;
         
        } catch (error) {

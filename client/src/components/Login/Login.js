@@ -34,29 +34,38 @@ const Login = () => {
     }
 
     return (
-        <form className='container' onSubmit={handleSubmit} >
-            {error && <p>{error}</p>}
-            <div className='container_auth'>
-                <h1>Login</h1>
-                <input 
-                    className='input' 
-                    type='text' 
-                    placeholder='Email' 
-                    name='email'
-                    onChange={handleInputChange} 
-                />
+        <form className='login_Container' onSubmit={handleSubmit} >
 
-                <input 
-                    className='input' 
-                    type='password' 
-                    placeholder='password' 
-                    name='password'
-                    onChange={handleInputChange} 
-                />
-                
-                <Link className='link' to='/Register'>Register</Link>
-                <button className='btn' type='submit'><span>Login</span></button>
+            <div className='login_Container_Auth'>
+                <div className='login_Inputs'>
+                    {error && <p className='login_Error'>{error}</p>}
+                    <h1 className='login_Title'>Login</h1>
+                    <input 
+                        className='login_Input' 
+                        type='text' 
+                        placeholder='Email' 
+                        name='email'
+                        onChange={handleInputChange} 
+                    />
+
+                    <input 
+                        className='login_Input' 
+                        type='password' 
+                        placeholder='password' 
+                        name='password'
+                        onChange={handleInputChange} 
+                    />
+                    
+                    <Link className='Login_link' to='/Register'>Register</Link>
+                    <button className='login_Btn' type='submit'><span>Login</span></button>
+                </div>
+
+                <div className="login_Img" >
+                    <img className="login_Img_Tag" src="https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg"/>
+                </div>
+
             </div>
+
 
         </form>
     )

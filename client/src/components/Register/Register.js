@@ -31,44 +31,54 @@ const Register = () => {
             history.push("/login");
         } 
 
-        if(message) {
+        if( message) {
             setError(message)
-        }
+                setTimeout( () => {
+                    setError(null)
+                }, 4000 )
+            }
     }
 
 
     return (
-        <form className='container' onSubmit={handleSubmit}>
-            {error && <p>{error}</p>}
+        <form className='Register_Container' onSubmit={handleSubmit}>
 
-            <div className='container_auth'>
-                <h1>Register</h1>
-                <input 
-                    className='input' 
-                    type='text' 
-                    placeholder='Name' 
-                    name='name'
-                    onChange={handleInputChange}
+            <div className='Register_Container_Auth'>
+                <div className='Register_Inputs'>
+                {error && <p className='Register_Error'>{error}</p>}
+                    <h1 className='Register_Title'>Register</h1>
+                    <input 
+                        className='Register_Input' 
+                        type='text' 
+                        placeholder='Name' 
+                        name='name'
+                        onChange={handleInputChange}
 
-                />
-                <input 
-                    className='input' 
-                    type='text' 
-                    placeholder='Email' 
-                    name='email'
-                    onChange={handleInputChange}
-                />
-                <input 
-                    className='input' 
-                    type='password' 
-                    placeholder='password' 
-                    name='password'
-                    onChange={handleInputChange}
-                />
+                    />
+                    <input 
+                        className='Register_Input' 
+                        type='email' 
+                        placeholder='Email' 
+                        name='email'
+                        onChange={handleInputChange}
+                    />
+                    <input 
+                        className='Register_Input' 
+                        type='password' 
+                        placeholder='password' 
+                        name='password'
+                        onChange={handleInputChange}
+                    />
 
-                <Link className='link' to='/Login'>Back</Link>
-                <button className='btn'><span>Register</span></button>
+                    <Link className='Register_link' to='/Login'>Login</Link>
+                    <button className='Register_Btn'><span>Register</span></button>
+                </div>
+
+                <div className="Register_Img" >
+                    <img className="Register_Img_Tag" src="https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg"/>
+                </div>
             </div>
+
 
         </form>
     )

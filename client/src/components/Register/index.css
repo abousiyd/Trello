@@ -1,20 +1,94 @@
-.container {
-    background-color: rgb(241, 247, 247);
+.Register_Container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
 }
-
-.container_auth {
+.Register_Container_Auth {
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 80%;
     height: 80vh;
-    background-color: white;
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: 0 1px 3px 0 lavender;
+}
+.Register_Inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px 0px 0px 5px;
+}
+.Register_Title {
+    margin: 15px 0;
+    font-size: 3rem;
+    color: #687cec;
+}
+.Register_Input{
+    padding:10px;
+    margin: 20px 0;
+    width: 60%;
+    border-radius:5px;
+    border:3px solid transparent;
+    background: #f7fafc;
+    line-height: 24px;
+    outline:none;
+}
+.Register_Input:focus {
+    background-color: white;
+    border:3px solid hsl(210, 38%, 95%);
+}
+.Register_link {
+    margin-left: 20%;
+    align-self: flex-start;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    text-decoration: none;
+    color: #687cec;
+    font-size: 1rem;
+    transition: .3s;
+}
+.Register_Btn {
+    background: #687cec;
+    color: #FFF;
+    cursor: pointer;
+    padding:10px;
+    margin: 20px 0;
+    width: 60%;
+    border-radius:5px;
+    border:3px solid transparent;
+    line-height: 24px;
+    outline:none;
+}
+.Register_Btn:hover {
+    background: #3c53d4;
+}
+.Register_Img {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 0px 5px 5px 0px;
+    height: 100%;
+    background-color: #ebf4ff;
+}
+
+@media only screen and (max-width: 600px) {
+    .Register_Img  {
+      display: none;
+    }
+  }
+.Register_Img_Tag {
+    width: 70%;
+}
+
+.Register_Error {
+    color: red;
 }

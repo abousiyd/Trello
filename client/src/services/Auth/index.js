@@ -18,8 +18,10 @@ const Auth = {
     login: async (credentials) => {
         try {
             const {data} = await axios().post('auth/login', credentials);
-            return data
+            localStorage.setItem('trello', JSON.stringify(data.data));
+            return data 
        } catch (error) {
+           console.log(error)
            return {
                status : 'error',
                message : 'fallo del servidor',

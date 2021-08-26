@@ -1,0 +1,33 @@
+.addDash_form {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.addDash_input{
+    width: 80%;
+    background: #fff;
+    color: #a3a3a3;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    border: 0;
+    outline: 0;
+    padding: 10px 5px;
+}
+.addDash_icon {
+    background-color: red;
+    cursor: pointer;
+    background: #7f8ff4;
+    color: #fff;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 4px 20px;
+    z-index: 10;
+    position: absolute;
+    right: 5px;
+}
+.addDash_icon:hover {
+    background: #6c7ff2;
+  }

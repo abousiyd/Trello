@@ -7,7 +7,17 @@ const DashboardSchema = new Schema({
         type: String,
         trim: true,
         require: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        require: true
+    },
+    users: {
+        type: [{type: Schema.Types.ObjectId, ref: 'User'}],
+        require: true
     }
+
 })
 
 module.exports = model('Dashboard', DashboardSchema)
