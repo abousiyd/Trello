@@ -1,0 +1,40 @@
+.main_Nav {
+    background-color: black;
+}
+
+.main_NavBar {
+    display: flex;
+    list-style: none;
+    font-size: 1em;
+    margin: 0;
+}
+.main_Nav_Title {
+    margin-left: auto;  
+    padding: 20px;
+}
+.main_Nav_Logout {
+    margin-left: auto;
+    padding: 20px; 
+    margin-right: 0;
+    background-color: rgb(156, 156, 141);
+}
+.main_Nav_User {
+    border-radius: 50px;
+    padding: 20px;
+    height: 15px;
+    width: 15px;
+}
+
+.main_Nav_Home {
+    padding: 20px;
+}
+
+span {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

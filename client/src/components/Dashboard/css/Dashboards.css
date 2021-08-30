@@ -64,3 +64,8 @@ body {
     right: 0;
     margin: 10px;
 }
+.dash_Body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

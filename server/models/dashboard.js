@@ -16,6 +16,10 @@ const DashboardSchema = new Schema({
     users: {
         type: [{type: Schema.Types.ObjectId, ref: 'User'}],
         require: true
+    },
+    columns: {
+        type: [{type: Schema.Types.ObjectId, ref: 'Column'}],
+        require: true
     }
 
 })

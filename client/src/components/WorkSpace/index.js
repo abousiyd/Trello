@@ -1,7 +1,7 @@
 import React from "react";
 
 const WorkSpace = ({activeDash}) => {
-    const {name, user, users} = activeDash
+    const {name, user, users, columns} = activeDash
 
     return (
         <div className="work_space">
@@ -9,6 +9,16 @@ const WorkSpace = ({activeDash}) => {
             <h1> todos los participantes </h1>
             {(users || []).map(participante => (
                 <p key={participante._id}>{participante.name}, {participante.email}</p>
+            ))}
+
+
+
+            {(columns || []).map(column => (
+                <div>
+
+                    <p key={column._id}>{column.name}</p>
+                    
+                </div>
             ))}
         </div>
     )

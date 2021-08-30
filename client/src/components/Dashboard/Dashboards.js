@@ -2,7 +2,9 @@ import React, {useState, useEffect}  from 'react'
 import Dashboard from '../../services/Dashboard'
 import './css/Dashboards.css'
 import WorkSpace from '../WorkSpace'
+// import NavBar from '../NavBar/index'
 import AddDasboard  from './AddDashboard'
+import NavBar from '../NavBar'
 
 
 const Dashboards = () => {
@@ -47,6 +49,7 @@ const Dashboards = () => {
 
     return (
         <div className='app'>
+            
             <div className='dash_container'>
                 <div className='dash_header'>
                     <h1 className='dash_title'>Tableros</h1>
@@ -78,7 +81,15 @@ const Dashboards = () => {
                 </div>
             </div>
 
-            { activeDash && <WorkSpace activeDash={activeDash} />}
+            <div className='dash_Body'>
+            <NavBar />
+                <div>
+
+                { activeDash && <WorkSpace activeDash={activeDash} />}
+                </div>
+                
+            </div>
+
 
         </div>
     )

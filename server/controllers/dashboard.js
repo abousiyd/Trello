@@ -3,12 +3,12 @@ const Dashboard = require('../models/dashboard')
 const dashboard = {
     create: (req, res) => {
 
-        const {body: {name, users = []}, user: {id: userId}} = req;
+        const {body: {name, users = [], columns = []}, user: {id: userId}} = req;
 
         const user = userId
         users.push(userId)
 
-        Dashboard.create({name, user , users}, (err, obj) => {
+        Dashboard.create({name, user , users, columns}, (err, obj) => {
             if(err) {
                 return res.json({status:'error', message: 'no se ha creado la tabla', data:null});
             }else{
@@ -25,6 +25,7 @@ const dashboard = {
         Dashboard.find({})
         .populate('user')
         .populate('users')
+        .populate('columns')
         .exec((err, tablas) => {
 
             if(err || !tablas) {
