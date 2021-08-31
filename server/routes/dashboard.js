@@ -4,10 +4,10 @@ const {create, list, getDashboard, edit, deleteDashboard} = require('../controll
 const authUser = require('../middleware/authUser');
 
 router.post('/create', authUser, create)
-router.get('/list', list)
-router.get('/:id', getDashboard)
-router.put('/:id', edit)
-router.delete('/:id', deleteDashboard)
+router.get('/list', authUser, list)
+router.get('/:id', authUser, getDashboard)
+router.put('/:id', authUser, edit)
+router.delete('/:id', authUser, deleteDashboard)
 
 
 

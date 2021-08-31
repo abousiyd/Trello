@@ -16,7 +16,6 @@ const dashboard = {
                     status: 'success',
                     message: 'tabla creada',
                     data: null
-    
                 });
             }
         })
@@ -26,6 +25,7 @@ const dashboard = {
         .populate('user')
         .populate('users')
         .populate('columns')
+        .populate({ path: 'columns', populate: { path: 'tasks' }})
         .exec((err, tablas) => {
 
             if(err || !tablas) {

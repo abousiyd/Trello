@@ -7,6 +7,10 @@ const ColumnSchema = new Schema({
         type: String,
         trim: true,
         required: true
+    }, 
+    tasks: {
+        type: [{type: Schema.Types.ObjectId, ref: 'Task'}],
+        require: true
     }
 
 });
