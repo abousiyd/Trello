@@ -4,8 +4,8 @@ import Column from '../../../services/Column'
 import './index.css'
 
 
-const AddDasboard = ({getColumns }) => {
-    console.log(getColumns , 888)
+const AddColumn = ({getColumns }) => {
+    // console.log(getColumns , 888)
 
     const [columnName, setColumnName] = useState('') 
 
@@ -15,7 +15,6 @@ const AddDasboard = ({getColumns }) => {
 
     const addNewColumn = async () => {
         await Column.add(columnName)
-        getColumns()
         
     }
 
@@ -28,4 +27,4 @@ const AddDasboard = ({getColumns }) => {
     )
 
 }
-export default AddDasboard;
+export default AddColumn;

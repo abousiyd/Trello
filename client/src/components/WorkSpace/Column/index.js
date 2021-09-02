@@ -1,10 +1,12 @@
 
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
+import Tasks from '../Taks/index'
 
-import Column from '../../../services/Column'
+import columnServices from '../../../services/Column'
 
 
-const Columns = ({column}) => {
+const Column = ({column}) => {
+
 
     const [showColumn, setShowColumn] = useState(true)
     const [columnName, setcolumnName] = useState(null)
@@ -15,9 +17,11 @@ const Columns = ({column}) => {
     }
 
     const deleteColumn = async (id) => {
-        await Column.deleteColumn(id)
+        await columnServices.deleteColumn(id)
         setShowColumn(false)
+
     }
+
 
     return (
 
@@ -29,10 +33,11 @@ const Columns = ({column}) => {
 
             <i onClick={() => deleteColumn(column._id)} className="far fa-trash-alt trash-icon"></i>
 
+            <Tasks column={column}/>
             </div>}
     </>
     )
 
 
 }
-export default Columns
+export default Column

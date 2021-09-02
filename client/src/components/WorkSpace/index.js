@@ -1,22 +1,15 @@
-import React, {useState} from "react";
-import Columns from "./Columns";
+import React from "react";
+import Column from "./Column";
 import AddColumn from './AddColumn/index'
 import './index.css'
 // import Column from '../../services/Column'
 
 
 const WorkSpace = ({activeDash}) => {
-
-
-
-    
-
-    
   
     
     const {name, user, users, columns} = activeDash
     
-
 
     return (
         <>
@@ -34,14 +27,13 @@ const WorkSpace = ({activeDash}) => {
         </div>
 
         <AddColumn   />
-        {/* {(column || [].map(item => {
-            <p>{item}</p>
-        }))} */}
 
         <div className='work_space_columns'>
             {(columns || []).map(column => (
 
-                <Columns key={column._id} column={column} />
+                <>
+                    {column && <Column column={column} key={column._id}  />}
+                </>
 
             ))}
         </div>
