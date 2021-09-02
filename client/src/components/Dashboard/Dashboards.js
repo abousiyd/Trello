@@ -2,7 +2,6 @@ import React, {useState, useEffect}  from 'react'
 import Dashboard from '../../services/Dashboard'
 import './css/Dashboards.css'
 import WorkSpace from '../WorkSpace'
-// import NavBar from '../NavBar/index'
 import AddDasboard  from './AddDashboard'
 import NavBar from '../NavBar'
 
@@ -13,7 +12,6 @@ const Dashboards = () => {
     const [editDashId, setEditDashId] = useState(null)
     const [activeDash, setActiveDDash] = useState(null)
     const [dashName, setDashName] = useState(null)
-
     
     useEffect( () => {
         getDashboards()
@@ -62,12 +60,13 @@ const Dashboards = () => {
                     {(dashboards || []).map(dash => {
 
                         const {name, _id} = dash
-                    return <div className='dash_card' key={_id}>
+                        return <div className='dash_card' key={_id}>
                             {
                                 editDashId === _id ? 
-                                <input onChange={handleInputChange} type='text' value={dashName === null ? name : dashName} placeholder='name' /> : 
+                                <input onChange={handleInputChange} type='text' value={dashName === null ? name : dashName} placeholder='name' /> 
+                                : 
                                 <>
-                                <h1 onClick={() => setActiveDDash(dash)} key={_id}>{name}</h1>
+                                    <h1 onClick={() => setActiveDDash(dash)} key={_id}>{name}</h1>
                                 </>
                             }
                             {
@@ -79,6 +78,8 @@ const Dashboards = () => {
                         </div>
                     })}
                 </div>
+
+
             </div>
 
             <div className='dash_Body'>

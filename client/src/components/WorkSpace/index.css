@@ -1,0 +1,49 @@
+.work_space {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 17px 2px 17px 22px;
+    letter-spacing: 2px;
+    box-shadow: .2px .2px 2px .2px rgb(196, 201, 245);
+    background: linear-gradient(to left,transparent,rgb(241, 242, 255),transparent,rgb(249, 250, 255));
+    /* height: 5vh; */
+}
+.work_space_title {
+    display: flex;
+    justify-content: center;
+    margin: 1px;
+}
+.work_space_subtitle {
+    display: flex;
+    justify-content: center;
+    margin: 1px;
+}
+.work_space_users {
+    display: flex;
+    justify-content: center;
+    margin: 1px;
+}
+
+
+
+
+.work_space_columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.work_space_column {
+    background-color: rgb(184, 173, 173);
+    margin: 10px;
+    position: relative;
+}
+
+.edit-icon {
+    color: teal;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1px;
+}

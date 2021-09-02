@@ -51,8 +51,8 @@ const column = {
     // },
 
     deletecolumn: (req, res) => {
-        const {params: {id: _id}} = req
-        Column.deleteOne({_id}, (err, data) => {
+        const {params: {id: _id}, params} = req
+        Column.findByIdAndRemove(_id, (err, data) => {
             if(err) return res.json({status:'error', message:'no has podido eliminar la columna', data:null})
             
             res.json({

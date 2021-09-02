@@ -61,7 +61,7 @@ const Login = () => {
                 </div>
 
                 <div className="login_Img" >
-                    <img className="login_Img_Tag" src="https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg"/>
+                    <img className="login_Img_Tag" src="https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg" alt="imagen de login"/>
                 </div>
 
             </div>

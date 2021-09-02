@@ -1,26 +1,52 @@
-import React from "react";
+import React, {useState} from "react";
+import Columns from "./Columns";
+import AddColumn from './AddColumn/index'
+import './index.css'
+// import Column from '../../services/Column'
+
 
 const WorkSpace = ({activeDash}) => {
+
+
+
+    
+
+    
+  
+    
     const {name, user, users, columns} = activeDash
+    
+
 
     return (
+        <>
+        
         <div className="work_space">
-            <h1> soy {name}, creado por {user.name}</h1>
-            <h1> todos los participantes </h1>
+            <h2 className='work_space_title'>
+                 {name.toUpperCase()}. Nombre de usuario: {user.name.toUpperCase()}
+            </h2>
+
+            <h3 className='work_space_subtitle'> todos los participantes </h3>
             {(users || []).map(participante => (
-                <p key={participante._id}>{participante.name}, {participante.email}</p>
+                <p className='work_space_users' key={participante._id}>{participante.name}, {participante.email}</p>
             ))}
 
+        </div>
 
+        <AddColumn   />
+        {/* {(column || [].map(item => {
+            <p>{item}</p>
+        }))} */}
 
+        <div className='work_space_columns'>
             {(columns || []).map(column => (
-                <div>
 
-                    <p key={column._id}>{column.name}</p>
-                    
-                </div>
+                <Columns key={column._id} column={column} />
+
             ))}
         </div>
+
+        </>
     )
 }
 

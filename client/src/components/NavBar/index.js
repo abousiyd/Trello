@@ -4,7 +4,7 @@ import './index.css'
 
 const NavBar = () => {
 
-    let history = useHistory();
+    const history = useHistory();
 
     const [currentUser, setCurrentUser] = useState({})
 
@@ -23,7 +23,7 @@ const NavBar = () => {
 
     return (
         <nav className='main_Nav'>
-            <ul class="main_NavBar">
+            <ul className="main_NavBar">
                 <li className='main_Nav_Home'><a href="">Home</a></li>
                 <li className='main_Nav_Title'><a href="">Trello</a></li>
                 <li className='main_Nav_Logout'><span onClick={() => logout()}>Salir</span></li>

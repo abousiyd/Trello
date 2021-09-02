@@ -6,14 +6,14 @@ const getToken = () => {
     const trelloStorage = localStorage.getItem('trello') || '{}';
 
         const {token} = JSON.parse(trelloStorage)
-
         return {headers: {'Authorization': token}}
 }
 
-const dashboard = {
+const column = {
+
     list: async () => {
         try {
-            const {data} = await axios().get('dashboard/list', getToken());
+            const {data} = await axios().get('column/list', getToken());
             return data;
         } catch (error) {
             return {
@@ -23,9 +23,10 @@ const dashboard = {
         }
     },
 
-    deleteDash: async (id) => {
+
+    deleteColumn: async (id) => {
         try {
-            return await axios().delete(`dashboard/${id}`, getToken());
+            return await axios().delete(`column/${id}`, getToken());
         } catch (error) {
             return {
                 status : 'error',
@@ -34,19 +35,9 @@ const dashboard = {
         }
     },
 
-    save: async (id, name) => {
-        try {
-            return await axios().put(`dashboard/${id}`, {name}, getToken());
-        } catch (error) {
-            return {
-                status : 'error',
-                message : 'fallo del servidor',
-            }
-        }
-    },
     add: async (name) => {
         try {
-            const {data} = await axios().post('dashboard/create', {name}, getToken());
+            const {data} = await axios().post('column/create', {name}, getToken());
             return data;
         
        } catch (error) {
@@ -57,6 +48,8 @@ const dashboard = {
        }; 
     },
 
+
+
 }
 
-export default dashboard;
+export default column;

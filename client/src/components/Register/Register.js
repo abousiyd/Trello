@@ -75,7 +75,7 @@ const Register = () => {
                 </div>
 
                 <div className="Register_Img" >
-                    <img className="Register_Img_Tag" src="https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg"/>
+                    <img className="Register_Img_Tag" src="https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg" alt="imagen de login"/>
                 </div>
             </div>
 
