@@ -1,14 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Column from "./Column";
 import AddColumn from './AddColumn/index'
 import './index.css'
 // import Column from '../../services/Column'
 
 
-const WorkSpace = ({activeDash}) => {
+const WorkSpace = ({activeDash, getDashboards}) => {
+
+    useEffect(() => {
+        console.log(activeDash, 22)
+    }, [activeDash])
   
     
-    const {name, user, users, columns} = activeDash
+    const {name, user, users, columns, _id: activeDashId} = activeDash
     
 
     return (
@@ -26,7 +30,7 @@ const WorkSpace = ({activeDash}) => {
 
         </div>
 
-        <AddColumn   />
+        <AddColumn getDashboards={getDashboards} activeDashId={activeDashId}  />
 
         <div className='work_space_columns'>
             {(columns || []).map(column => (

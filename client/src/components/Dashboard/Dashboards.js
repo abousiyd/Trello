@@ -12,6 +12,8 @@ const Dashboards = () => {
     const [editDashId, setEditDashId] = useState(null)
     const [activeDash, setActiveDDash] = useState(null)
     const [dashName, setDashName] = useState(null)
+    console.log(activeDash, 55)
+
     
     useEffect( () => {
         getDashboards()
@@ -25,6 +27,10 @@ const Dashboards = () => {
     const getDashboards = async () => {
         const {data} = await Dashboard.list()
         setDashboards(data)
+        if (activeDash && data) {
+            const updateDash = data.find(d => d._id === activeDash._id)
+            setActiveDDash(updateDash)
+        }
     }
 
     const deleteDash = async (id) => {
@@ -86,7 +92,7 @@ const Dashboards = () => {
             <NavBar />
                 <div>
 
-                { activeDash && <WorkSpace activeDash={activeDash} />}
+                { activeDash && <WorkSpace getDashboards={getDashboards} activeDash={activeDash} />}
                 </div>
                 
             </div>

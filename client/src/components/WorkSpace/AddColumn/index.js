@@ -1,20 +1,20 @@
 import React, {useState} from 'react'
 import Column from '../../../services/Column'
-
 import './index.css'
 
 
-const AddColumn = ({getColumns }) => {
-    // console.log(getColumns , 888)
+const AddColumn = ({activeDashId, getDashboards}) => {
 
     const [columnName, setColumnName] = useState('') 
+
 
     const handleInputChange = (e) => {
         setColumnName(e.target.value)
     }
 
     const addNewColumn = async () => {
-        await Column.add(columnName)
+        await Column.add(columnName, activeDashId)
+        getDashboards()
         
     }
 

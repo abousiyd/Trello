@@ -1,19 +1,26 @@
 const Column = require('../models/column')
+const Dashboard = require('../models/dashboard')
+
 
 const column = {
     create: (req, res) => {
-        const {body: {name, tasks = []}} = req;
+        const {body: {name, id, tasks = []}} = req;
 
-        Column.create({name,tasks}, (err, obj) => {
+        Column.create({name,tasks}, (err, columna) => {
             if(err) {
                 return res.json({status:'error', message: 'no se ha creado la columna', data:null});
             }else{
-                return res.json({
-                    status: 'success',
-                    message: 'tabla creada',
-                    data: null
-    
-                });
+
+                Dashboard.findByIdAndUpdate(id, {$addToSet: {columns: [columna._id]}}, {new: true}, (err, tabla) => {
+                    if(err || !tabla) {
+                        return res.json({status:'error', message:'no has podido editar la tabla', data:null})
+                    }
+                    return res.json({
+                        status: 'success',
+                        message: 'tabla editada',
+                        data: tabla
+                    })
+                })
             }
         })
     },

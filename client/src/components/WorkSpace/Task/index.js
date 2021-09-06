@@ -1,4 +1,5 @@
 import React from "react"
+import AddTask from "../AddTask/index"
 
 
 const Tasks = ({column}) => {
@@ -11,6 +12,8 @@ const Tasks = ({column}) => {
             {(tasks || []).map(task => {
                 return <p>{task.title}</p>
             })}
+
+            <AddTask />
         </div>
         </>
     )
