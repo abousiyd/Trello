@@ -36,7 +36,6 @@ const column = {
     },
 
     add: async (name, id) => {
-        console.log(name, id, 4444)
         try {
             const {data} = await axios().post('column/create', {name, id}, getToken());
             return data;

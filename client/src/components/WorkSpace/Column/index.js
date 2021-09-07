@@ -29,12 +29,12 @@ const Column = ({column}) => {
 
                 <input onChange={handleInputChange} value={columnName === null ? column.name : columnName} type='text'  placeholder='name' /> 
 
-                <p  >{column.name}</p>
+                <p>{column.name}</p>
 
                 <i onClick={() => deleteColumn(column._id)} className="far fa-trash-alt trash-icon"></i>
                 
-                <Tasks column={column}/>
             </div>}
+                <Tasks column={column}/>
         </div>
     </>
     )

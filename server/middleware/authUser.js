@@ -4,8 +4,6 @@ function authUser(req, res, next) {
 
     const token = req.get("Authorization");
 
-    console.log(token, 777)
-
     if (!token) {
         res.json({ success: false, message: "No token provided" });
     } else {

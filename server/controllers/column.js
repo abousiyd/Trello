@@ -10,7 +10,6 @@ const column = {
             if(err) {
                 return res.json({status:'error', message: 'no se ha creado la columna', data:null});
             }else{
-
                 Dashboard.findByIdAndUpdate(id, {$addToSet: {columns: [columna._id]}}, {new: true}, (err, tabla) => {
                     if(err || !tabla) {
                         return res.json({status:'error', message:'no has podido editar la tabla', data:null})
@@ -37,26 +36,7 @@ const column = {
                 });
             });
         },
-
-
-    // list: function(req, res) {
-    //     const {params: {id: _id}} = req
-    //     Column.find({_id}, (err, column) =>{
-            
-    //         if(err || !column) {
-    //             return res.json({status:'error', message: 'no se ha podido cargar la columna', data: null});
-
-    //         } else {
-    //             return res.json({
-    //                 status: 'success',
-    //                 message: 'columna cargadas',
-    //                 data: column
-    
-    //             });
-    //         }
-    //     })
-    // },
-
+        
     deletecolumn: (req, res) => {
         const {params: {id: _id}, params} = req
         Column.findByIdAndRemove(_id, (err, data) => {
