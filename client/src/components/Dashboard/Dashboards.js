@@ -12,7 +12,6 @@ const Dashboards = () => {
     const [editDashId, setEditDashId] = useState(null)
     const [activeDash, setActiveDDash] = useState(null)
     const [dashName, setDashName] = useState(null)
-    console.log(activeDash, 55)
 
     
     useEffect( () => {

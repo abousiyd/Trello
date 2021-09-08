@@ -1,8 +1,9 @@
 .addColumn_form {
+    background-color: red;
     height: 10%;
 
 }
-.addColumn_input{
+/* .addColumn_input{
     width: 80%;
     
-}
+} */

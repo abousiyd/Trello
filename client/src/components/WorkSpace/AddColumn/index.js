@@ -20,7 +20,7 @@ const AddColumn = ({activeDashId, getDashboards}) => {
 
 
     return (
-        <form >
+        <form className='addColumn_form' >
             <input  onChange={handleInputChange} value={columnName} type='text' placeholder='Nombre columna' />
             <i onClick={addNewColumn} className="fas fa-plus "></i>
         </form>

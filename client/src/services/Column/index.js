@@ -1,7 +1,5 @@
 import axios from '../../plugins/index';
 
-
-
 const getToken = () => {
     const trelloStorage = localStorage.getItem('trello') || '{}';
 
@@ -46,6 +44,17 @@ const column = {
                message : 'fallo del servidor',
            };
        }; 
+    },
+
+    save: async (id, name) => {
+        try {
+            return await axios().put(`column/${id}`, {name}, getToken());
+        } catch (error) {
+            return {
+                status : 'error',
+                message : 'fallo del servidor',
+            }
+        }
     },
 
 

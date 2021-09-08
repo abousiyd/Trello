@@ -8,7 +8,6 @@ import './index.css'
 const WorkSpace = ({activeDash, getDashboards}) => {
 
     useEffect(() => {
-        console.log(activeDash, 22)
     }, [activeDash])
   
     
@@ -30,16 +29,16 @@ const WorkSpace = ({activeDash, getDashboards}) => {
 
         </div>
 
-        <AddColumn getDashboards={getDashboards} activeDashId={activeDashId}  />
 
         <div className='work_space_columns'>
             {(columns || []).map(column => (
-
+                
                 <>
-                    {column && <Column column={column} key={column._id}  />}
+                    {column && <Column  getDashboards={getDashboards} column={column} key={column._id}  />}
                 </>
 
             ))}
+                <AddColumn getDashboards={getDashboards} activeDashId={activeDashId}  />
         </div>
 
         </>

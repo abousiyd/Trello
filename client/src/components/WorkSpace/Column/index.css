@@ -1,0 +1,27 @@
+.formColumn {
+	/* width: 250px; */
+	margin: 5px;
+	background-color:rgb(255, 255, 255);
+	/* padding:0px 10px 10px 10px; */
+	border-radius:10px
+}
+
+.formColumn_input {
+	font-size: 15px;
+	padding: 5px 0 5px;
+	margin-left: 10px;
+	text-transform: uppercase;
+    outline: none;
+    margin: 0px;
+	border: 1px solid #ddd;
+	background: rgb(243, 242, 242);
+	border-radius: 3px;
+}
+
+.formColumn_title {
+	font-size: 20px;
+}
+
+.save-icon {
+	background-color: red;
+}

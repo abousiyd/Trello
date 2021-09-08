@@ -1,11 +1,12 @@
 import React from "react"
+import task from "../../../services/Task"
 import AddTask from "../AddTask/index"
 
 
-const Tasks = ({column}) => {
+const Tasks = ({column, getDashboards }) => {
+
 
     const {tasks } = column
-
     return (
         <>
         <div>
@@ -13,7 +14,7 @@ const Tasks = ({column}) => {
                 return <p>{task.title}</p>
             })}
 
-            <AddTask />
+            <AddTask getDashboards={getDashboards} />
         </div>
         </>
     )

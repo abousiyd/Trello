@@ -12,8 +12,6 @@ const task = {
 
     add: async (title, description) => {
 
-    console.log(title, description, 7771212112)
-
 
         try {
             const {data} = await axios().post('task/create', {title, description}, getToken());
@@ -28,7 +26,17 @@ const task = {
        }; 
     },
 
-
+    list: async () => {
+        try {
+            const {data} = await axios().get('task/list', getToken());
+            return data;
+        } catch (error) {
+            return {
+                status : 'error',
+                message : 'fallo del servidor',
+            }
+        }
+    },
 
 
 }
