@@ -10,8 +10,8 @@ const Dashboards = () => {
 
     const [dashboards, setDashboards] = useState([])
     const [editDashId, setEditDashId] = useState(null)
-    const [activeDash, setActiveDDash] = useState(null)
     const [dashName, setDashName] = useState(null)
+    const [activeDash, setActiveDDash] = useState(null)
 
     
     useEffect( () => {

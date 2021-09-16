@@ -15,7 +15,7 @@ const AddColumn = ({activeDashId, getDashboards}) => {
     const addNewColumn = async () => {
         await Column.add(columnName, activeDashId)
         getDashboards()
-        
+        setColumnName('')
     }
 
 

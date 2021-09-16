@@ -1,22 +1,36 @@
 const Task = require('../models/task')
+const Column = require('../models/column')
+
 
 const task = {
     create: function(req, res) {
 
-        const {body: {title, description}, user: {id: userId}} = req;
+        const {body: {title, description, id}, user: {id: userId}} = req;
         const user = userId
 
-        Task.create({title, description, user}, function(err, result) {
+        Task.create({title, description, id, user}, function(err, task) {
             
-            if (err) return res.json({status:'error', message: 'no se ha creado la tasca', data:null});
-            return res.json({
-                status: 'success',
-                message: 'tasca creada',
-                data: null
+            if (err) {
+                return res.json({status:'error', message: 'no se ha creado la tasca', data:null});
+            } else {
+                Column.findByIdAndUpdate(id, {$addToSet: {tasks: [task._id]}}, {new: true}, (err, task) => {
+                    console.log(task._id)
+                    if(err || !task) {
+                        return res.json({status:'error', message:'no has podido crear la taska', data:null})
+                    }
+                    return res.json({
+                        status: 'success',
+                        message: 'tasca creada',
+                        data: task
+                    })
+                })
 
-            });
+            }
         });  
     },
+
+
+
 
     edit: (req, res) => {
         const {body: {title, description}, params: {id: _id}} = req;

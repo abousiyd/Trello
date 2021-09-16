@@ -16,7 +16,7 @@ const column = {
                     }
                     return res.json({
                         status: 'success',
-                        message: 'tabla editada',
+                        message: 'columna creada',
                         data: tabla
                     })
                 })

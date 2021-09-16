@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import Column from "./Column";
 import AddColumn from './AddColumn/index'
 import './index.css'
-// import Column from '../../services/Column'
 
 
 const WorkSpace = ({activeDash, getDashboards}) => {
@@ -12,7 +11,6 @@ const WorkSpace = ({activeDash, getDashboards}) => {
   
     
     const {name, user, users, columns, _id: activeDashId} = activeDash
-    
 
     return (
         <>
