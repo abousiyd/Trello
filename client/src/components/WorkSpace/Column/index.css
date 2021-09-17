@@ -1,9 +1,9 @@
 .formColumn {
-	/* width: 250px; */
+	/* width: 25%; */
 	margin: 5px;
-	background-color:rgb(255, 255, 255);
-	/* padding:0px 10px 10px 10px; */
-	border-radius:10px
+	border-radius:10px;
+	background: #E3E5EB;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .formColumn_input {
@@ -21,7 +21,28 @@
 .formColumn_title {
 	font-size: 20px;
 }
-
 .save-icon {
-	background-color: red;
+	color: teal;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+	top: 0;
+    margin: 10px;
+}
+
+.editColumn_icon {
+	color: teal;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+	top: 0;
+    margin: 10px;
+}
+
+.deleteColumn-icon {
+	color: crimson;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
 }
