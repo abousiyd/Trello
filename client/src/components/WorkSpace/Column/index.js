@@ -1,4 +1,3 @@
-
 import React, {useState} from "react"
 import Tasks from '../Task/index'
 import columnServices from '../../../services/Column'
@@ -35,7 +34,6 @@ const Column = ({column, getDashboards}) => {
     return (
 
     <>
-        <div className='formColumn'>
 
             {showColumn && <div className='formColumn_body' key={column._id} className='work_space_column'>
 
@@ -58,7 +56,7 @@ const Column = ({column, getDashboards}) => {
                 <Tasks  getDashboards={getDashboards} column={column}/>
                 
             </div>}
-        </div>
+   
     </>
     )
 
