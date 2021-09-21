@@ -1,29 +1,48 @@
-.work_space {
+.main-nav, .main-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #8fa3af;
+    animation: float 9s ease-in-out infinite;
+}
+.main-user-text{
+    animation: float 9s ease-in-out infinite;
+}
+.main-nav-user {
+    border-radius: 50%;
+}
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.05);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.02);
+		transform: translatey(5px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.05);
+		transform: translatey(0px);
+	}
+}
+/* ------------------------------------------- */
+.main {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 17px 2px 17px 22px;
-    letter-spacing: 2px;
-    box-shadow: .2px .2px 2px .2px rgb(196, 201, 245);
-    background: linear-gradient(to left,transparent,rgb(241, 242, 255),transparent,rgb(249, 250, 255));
-    /* height: 5vh; */
+    justify-content: space-between;
     position: relative;
 }
-.work_space_title {
+.main-user{
     display: flex;
-    justify-content: center;
-    margin: 1px;
+    margin: 0 10px;
 }
-.work_space_subtitle {
+.main-people {
     display: flex;
-    justify-content: center;
-    margin: 1px;
 }
-.work_space_users {
-    display: flex;
-    justify-content: center;
-    margin: 1px;
+.main-img {
+    width: 40px;
 }
+
+
 
 
 

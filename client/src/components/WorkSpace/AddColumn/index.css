@@ -1,9 +1,33 @@
-.addColumn_form {
-    background-color: red;
-    height: 10%;
-
+.add-column-form {
+    position: relative;
+    display: flex;
+    margin: 20px 5px 0 5px;
+    height: 30px;
 }
-/* .addColumn_input{
-    width: 80%;
-    
-} */
+
+.add-column-input {
+    border-radius: 5px;
+    padding: 10px;
+	font-size: 13px;
+	border: 3px solid rgb(150, 213, 241);
+	text-transform: uppercase;
+	box-shadow: none;
+}
+.add-column-input:hover {
+    background-color: #cdd2d4;
+}
+
+.add-column-icon {
+    cursor: pointer;
+    background: #7f8ff4;
+    color: #fff;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 5px 25px;
+    position: absolute;
+    right: -10px;
+    bottom: 5px;
+}
+.add-column-icon:hover {
+    background: #6c7ff2;
+  }

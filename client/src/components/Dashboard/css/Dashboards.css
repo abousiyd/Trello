@@ -8,11 +8,6 @@ body {
     width: 100%;
     display: flex;
 }
-
-.work_space {
-    padding: 20px;
-}
-
 .dash_container {
     width: 200px;
     height: 100vh;

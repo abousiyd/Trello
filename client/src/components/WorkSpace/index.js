@@ -7,7 +7,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 const WorkSpace = ({activeDash, getDashboards}) => {
     const {name, user, users, columns, _id: activeDashId} = activeDash
-
+console.log(users, 456776545678, 777 )
     const [newColumns, setColumns] = useState(columns)
 
 
@@ -50,15 +50,32 @@ const WorkSpace = ({activeDash, getDashboards}) => {
 
     return (
         <>
-        <div className="work_space">
-            <h2 className='work_space_title'>
-                 {name.toUpperCase()}. Nombre de usuario: {user.name.toUpperCase()}
-            </h2>
+        <div className="main">
 
-            <h3 className='work_space_subtitle'> todos los participantes </h3>
-            {(users || []).map(participante => (
-                <p className='work_space_users' key={participante._id}>{participante.name}, {participante.email}</p>
-            ))}
+            <div className="main-user">
+                <h2 className="main-user-text">Tablero creado por: {user.name.toUpperCase()} </h2>
+                <span className='main-nav'>
+                    <img className='main-nav-user' src={`http://joeschmoe.io/api/v1/${user.name}`}/>
+                </span>
+
+            </div>
+
+            <div  className="main-people">
+                {(users || []).map(participante => (<div key={participante._id}> 
+                    <img className='main-img' 
+                        src={`http://joeschmoe.io/api/v1/${participante.name}`}
+                        alt={participante.name}
+                    />
+                </div>
+                ))}
+
+            </div>
+
+            <div>
+                <button> Invetar</button>
+            </div>
+            
+            
 
         </div>
 

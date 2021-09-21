@@ -35,27 +35,26 @@ const Column = ({column, getDashboards}) => {
 
     <>
 
-            {showColumn && <div className='formColumn_body' key={column._id} className='work_space_column'>
+        {showColumn && <div className='form-container' key={column._id}>
 
-                {
-                    editColumnId === column._id ? 
-                <input className='formColumn_input' onChange={handleInputChange} value={columnName === null ? column.name : columnName} type='text'  placeholder='name' /> 
+            {
+                editColumnId === column._id ? 
+                <input className='column-input' onChange={handleInputChange} value={columnName === null ? column.name : columnName} type='text'  placeholder='name' /> 
                     :
-                <p className='formColumn_title'>{column.name}</p>
+                <h3 className='column-title'>{column.name}</h3>
 
-                }
-                {
-                    editColumnId === column._id ? 
-                    <i onClick={() => save(column._id)} className="far fa-save save-icon"></i> :  
-                    <i onClick={() => setEditColumnId(column._id)} className="fas fa-pen editColumn_icon"></i>
-                    
-                }
-
-                <i onClick={() => deleteColumn(column._id)} className="far fa-trash-alt deleteColumn-icon"></i>
+            }
+            {
+                editColumnId === column._id ? 
+                <i onClick={() => save(column._id)} className="far fa-save save-column-icon"></i> :  
+                <i onClick={() => setEditColumnId(column._id)} className="fas fa-pen edit-column-icon"></i>
                 
-                <Tasks  getDashboards={getDashboards} column={column}/>
-                
-            </div>}
+            }
+            <i onClick={() => deleteColumn(column._id)} className="far fa-trash-alt remove-column-icon"></i>
+            
+            <Tasks  getDashboards={getDashboards} column={column}/>
+            
+        </div>}
    
     </>
     )

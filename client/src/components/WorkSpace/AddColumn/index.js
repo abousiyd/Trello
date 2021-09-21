@@ -7,7 +7,6 @@ const AddColumn = ({activeDashId, getDashboards}) => {
 
     const [columnName, setColumnName] = useState('') 
 
-
     const handleInputChange = (e) => {
         setColumnName(e.target.value)
     }
@@ -20,9 +19,9 @@ const AddColumn = ({activeDashId, getDashboards}) => {
 
 
     return (
-        <form className='addColumn_form' >
-            <input  onChange={handleInputChange} value={columnName} type='text' placeholder='Nombre columna' />
-            <i onClick={addNewColumn} className="fas fa-plus "></i>
+        <form className='add-column-form' >
+            {columnName && <i onClick={addNewColumn} className="fas fa-plus add-column-icon"></i>}
+            <input className='add-column-input' onChange={handleInputChange} value={columnName} type='text' placeholder='Nombre columna' />
         </form>
     )
 

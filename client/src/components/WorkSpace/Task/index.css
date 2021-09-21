@@ -1,34 +1,64 @@
-.taskList {
-    background: #fff;
-	align-items: center;
-	border-radius: 10px;
-    padding-top: 1px;
-	/* width: 90%; */
-
-}
-.taskList_container{
+.task-list{
     position: relative;
-    margin: 5px;
-    /* width: 60%; */
+    /* bottom: -20px; */
+    /* margin: 13; */
 }
-.taskList_title {
-    /* background-color: brown; */
-    margin: 15px 15px 15px 5px;
-    cursor: move;
+.task-list-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
 }
-.taskEdit_Icon{
+.task-list-items {
+    padding: 0 0.6rem 0.5rem;
+    overflow-y: auto;
+}
+.task-list-title {
+    margin: 1px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.3;
+    background-color: #fff;
+    padding: 5px 20px;
+    color: #4d4d4d;
+    border-bottom: 0.1px solid #ccc;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.task-list-title:hover {
+    background-color: #cdd2d4;
+}
+.remove-task-icon {
+    font-size: 15px;
     position: absolute;
-    bottom: 0;
-    right: 30px;
+	bottom: 0;
+    right: 15px;
+    margin: 10px 0 0 0;
 	top: 0;
 }
-.taskDelete_Icon {
+.edite-task-icon {
+    font-size: 15px;
     position: absolute;
-    bottom: 0;
-    right: 0px;
+	bottom: 0;
+    right: 35px;
+    margin: 10px 0 0 0;
 	top: 0;
 }
-.taskList_box {
-    background-color: red;
-    width: 100%;
+.save-task-icon {
+    font-size: 15px;
+    position: absolute;
+	bottom: 0;
+    right: 35px;
+    margin: 10px 0 0 0;
+	top: 0;
+}
+.task-input-title, .task-input-title-descripcion{
+    color: #333;
+	margin: 5px 0 0px 15px;
+	font-size: 13px;
+	width: 60%;
+	border: 3px solid rgb(150, 213, 241);
+	border-radius: 5px;
+	text-transform: uppercase;
+	box-shadow: none;
+	font-weight: 600;
 }

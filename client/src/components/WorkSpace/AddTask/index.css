@@ -1,10 +1,46 @@
-.formTask {
+.form-task {
     display: flex;
     flex-direction: column;
-    /* width: 50px; */
-    background-color: rgb(179, 170, 170);
 }
 
-.titleTask {
-    margin: 5px;
+
+.add-task-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: inherit;
+    border: none;
+    font-size: 15px;
+    color: #838c91;
+    padding: 10px;
+    cursor: pointer;   
+    margin: 0 8px; 
+    border-radius: 3px;
+    box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.75);
+}
+.add-task-btn-text:hover {
+    background-color: #cdd2d4;
+    color: #4d4d4d;
+    text-decoration: underline;
+}
+.title-task {
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    margin: 5px ;
+}
+.title-task:hover, .description-task:hover {
+    background-color: #cdd2d4;
+    color: #4d4d4d;
+    text-decoration: underline;
+}
+
+.description-task{
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding: 0 5px 0 10px;
+    margin: 5px ;
+    resize: none;
 }
