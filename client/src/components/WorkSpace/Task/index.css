@@ -1,7 +1,13 @@
 .task-list{
     position: relative;
-    /* bottom: -20px; */
-    /* margin: 13; */
+}
+.actions {
+    visibility: hidden;
+}
+.task-list:hover .actions {
+    visibility: visible;
+    
+
 }
 .task-list-title {
     font-size: 15px;

@@ -33,11 +33,15 @@ const AddTask = ({getDashboards, column}) => {
     }
 
     return (
-        <form className='form-task' >
-            
-            <span class="add-task-btn-text" onClick={addNewTask}>Add a card...</span>
+        <form >
             {
-                addTask && <div>
+                !addTask && <span className="add-task-btn-primary" onClick={() => setAddTask(true)}>
+                    <i className="fas fa-plus"></i>
+                </span>
+            }
+            
+            {
+                addTask && <div className='form-task' >
                     <input 
                         className='title-task' 
                         onChange={handleInputChange} 
@@ -55,6 +59,10 @@ const AddTask = ({getDashboards, column}) => {
                         placeholder='description...'
                         rows="2"
                     ></textarea>
+                    <span className="add-task-btn-secondary" onClick={addNewTask}>Create</span>
+                    
+                    <span className="add-task-btn-tertiary" onClick={() => setAddTask(false)}>Close</span>
+                
                 </div>
         }
 

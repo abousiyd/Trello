@@ -17,10 +17,10 @@ const AddDasboard = ({getDashboards}) => {
     }
 
     return (
-        <form className='addDash_form'>
-            <input className='addDash_input' onChange={handleInputChange} value={dashName} type='text' placeholder='name' />
+        <form className='add-dash-form'>
+            <input className='add-dash-input' onChange={handleInputChange} value={dashName} type='text' placeholder='name' />
             {
-               dashName && <i onClick={addNewDash} className="fas fa-plus addDash_icon"></i>
+               dashName && <i onClick={addNewDash} className="fas fa-plus add-dash-icon"></i>
             }
         </form>
     )

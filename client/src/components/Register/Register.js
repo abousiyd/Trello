@@ -36,16 +36,17 @@ const Register = () => {
                 setTimeout( () => {
                     setError(null)
                 }, 4000 )
-            }
+        }
     }
 
 
     return (
         <form className='Register_Container' onSubmit={handleSubmit}>
-
+            {error && 
+                <span className='Register_Error'> Warning! &nbsp; {error}</span>
+            } 
             <div className='Register_Container_Auth'>
                 <div className='Register_Inputs'>
-                {error && <p className='Register_Error'>{error}</p>}
                     <h1 className='Register_Title'>Register</h1>
                     <input 
                         className='Register_Input' 

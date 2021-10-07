@@ -24,10 +24,16 @@ const NavBar = () => {
     return (
         <nav className='main_Nav'>
             <ul className="main_NavBar">
-                <li className='main_Nav_Home'><a href="">Home</a></li>
-                <li className='main_Nav_Title'><a href="">Trello</a></li>
-                <li className='main_Nav_Logout'><span onClick={() => logout()}>Salir</span></li>
-                <li className="main_Nav_User"><a href="">{currentUser.name?.charAt(0)}</a></li>
+                <li className='main_Nav_Home nav-header'><a href="">Home</a></li>
+                <li className='main_Nav_Title nav-header'><a href="">Trello</a></li>
+                <li className='main_Nav_Logout nav-header'><span onClick={() => logout()}>Salir</span></li>
+                <li className="main_Nav_User">
+                    <img className='main_nav_img' 
+                            src={`http://joeschmoe.io/api/v1/${currentUser.name}`}
+                            title={currentUser.name}
+                    />
+                </li>
+                
             </ul>
         </nav>
     )

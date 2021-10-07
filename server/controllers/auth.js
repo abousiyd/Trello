@@ -9,11 +9,11 @@ const Auth = {
 
         User.findOne({email}, (err, user) => {
             if(err || user) {
-                return res.json({status:'error', message: 'usuario ya existe', data:null});
+                return res.json({status:'error', message: 'Usuario ya existe', data:null});
             }
 
             User.create({name, email, password}, function(err, result) {
-                if (err) return res.json({status:'error', message: 'no se ha podido registrar', data:null});
+                if (err) return res.json({status:'error', message: 'No se ha podido registrar', data:null});
                 res.json({
                     status: 'success',
                     menssage: 'usuario agregado',
@@ -22,8 +22,6 @@ const Auth = {
                 });
             });  
         })
-
-
     },
 
     login: function(req, res){
@@ -32,7 +30,7 @@ const Auth = {
         
         User.findOne({email}, function(err, user) {
             if (err || !user ) {
-                return res.json({status:'error', message: 'usuario no existe', data: null});
+                return res.json({status:'error', message: 'Usuario no existe', data: null});
             }
 
             if (bcrypt.compareSync(password, user.password)) {
@@ -41,8 +39,21 @@ const Auth = {
 
                 return res.json({status:'success', message: 'logeado', data:{user, token}});
             }
-           return res.json({status:'error', message: 'credenciales invalidos', data:null});
+           return res.json({status:'error', message: 'Credenciales invalidos', data:null});
         })
+    }, 
+
+    list: function(req, res) {
+        const {params: {name}} = req
+
+        User.find({name: { $regex: new RegExp(name, 'ig')}},  function(err, users) {
+            if (err || !users ) {
+                return res.json({status:'error', message: 'Usuario no existe', data: null});
+            } else {
+                return res.json({status:'success', message: 'encontrado', data: users});
+            }
+        })
+
     }
 }
 

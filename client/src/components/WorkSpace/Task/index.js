@@ -22,7 +22,8 @@ const Tasks = ({column, getDashboards }) => {
         getDashboards()
     }
 
-    const save = async (id) => {
+    const 
+    save = async (id) => {
         if(!taskName || !taskDescripcion) {
             setEditTaskId(null)
             return
@@ -52,10 +53,10 @@ const Tasks = ({column, getDashboards }) => {
                         }
                         {
                             editTaskId === task._id ?
-                            <i onClick={() => save(task._id)} className="far fa-save save-task-icon"></i> :  
-                            <i onClick={() => setEditTaskId(task._id)} className="fas fa-pen edite-task-icon"></i>
+                            <i onClick={() => save(task._id)} className="far fa-save save-task-icon actions"></i> :  
+                            <i onClick={() => setEditTaskId(task._id)} className="fas fa-pen edite-task-icon actions"></i>
                         }
-                        <i onClick={() => deleteTask(task._id)} className="far fa-trash-alt remove-task-icon"></i>
+                        <i onClick={() => deleteTask(task._id)} className="far fa-trash-alt remove-task-icon actions"></i>
                     </div>
                     }}
                 </Draggable>

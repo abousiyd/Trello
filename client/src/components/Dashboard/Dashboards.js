@@ -53,7 +53,7 @@ const Dashboards = () => {
     return (
         <div className='app'>
             
-            <div className='dash_container'>
+            <div className='dash_container' id="style-2">
                 <div className='dash_header'>
                     <h1 className='dash_title'>Tableros</h1>
                 </div>
@@ -68,7 +68,7 @@ const Dashboards = () => {
                         return <div className='dash_card' key={_id}>
                             {
                                 editDashId === _id ? 
-                                <input onChange={handleInputChange} type='text' value={dashName === null ? name : dashName} placeholder='name' /> 
+                                <input className='dash_input' onChange={handleInputChange} type='text' value={dashName === null ? name : dashName} placeholder='name' /> 
                                 : 
                                 <>
                                     <h1 onClick={() => setActiveDDash(dash)} key={_id}>{name}</h1>
@@ -76,10 +76,10 @@ const Dashboards = () => {
                             }
                             {
                                 editDashId === _id ? 
-                                <i onClick={() => save(_id)} className="far fa-save edit-icon"></i> :  
-                                <i onClick={() => setEditDashId(_id)} className="fas fa-pen edit-icon"></i>
+                                <i onClick={() => save(_id)} className="far fa-save save-icon actiones"></i> :  
+                                <i onClick={() => setEditDashId(_id)} className="fas fa-pen edit-icon actiones"></i>
                             }                                
-                            <i onClick={() => deleteDash(_id)}  className="far fa-trash-alt trash-icon"></i>
+                            <i onClick={() => deleteDash(_id)}  className="far fa-trash-alt remove-icon actiones"></i>
                         </div>
                     })}
                 </div>

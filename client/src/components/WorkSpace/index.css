@@ -2,69 +2,46 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid #8fa3af;
-    animation: float 9s ease-in-out infinite;
-}
-.main-user-text{
+    border: 1px solid #b1cf5f;
     animation: float 9s ease-in-out infinite;
 }
 .main-nav-user {
     border-radius: 50%;
 }
-@keyframes float {
-	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.05);
-		transform: translatey(0px);
-	}
-	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.02);
-		transform: translatey(5px);
-	}
-	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.05);
-		transform: translatey(0px);
-	}
-}
+
 /* ------------------------------------------- */
 .main {
     display: flex;
     justify-content: space-between;
     position: relative;
+    background-color: white;
 }
 .main-user{
     display: flex;
     margin: 0 10px;
+    display: flex;
+    align-items: center;
 }
 .main-people {
     display: flex;
+    align-items: center;
 }
 .main-img {
     width: 40px;
 }
-
-
-
-
-
-
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.main-user-text {
+    margin-right: 15px;
+    color: #333;
+    font-size: 17px;
+    font-family: 'Roboto';
+}
 .work_space_columns {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-
 }
-
 .work_space_column {
     margin: 10px;
     position: relative;
-    /* width: 50%; */
-
-}
-
-.edit-icon {
-    color: teal;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 1px;
 }

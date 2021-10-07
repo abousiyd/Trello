@@ -21,13 +21,24 @@ const Auth = {
             localStorage.setItem('trello', JSON.stringify(data.data));
             return data 
        } catch (error) {
-           console.log(error)
            return {
                status : 'error',
                message : 'fallo del servidor',
            };
        } 
-    }
+    }, 
+
+    list: async (name) => {
+        try {
+            const {data} = await axios().get(`auth/list/${name}`);
+            return data
+        } catch (error) {
+            return {
+                status : 'error',
+                message : 'fallo del servidor',
+            }
+        }
+    },
 }
 
 export default Auth;

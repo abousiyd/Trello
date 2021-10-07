@@ -44,6 +44,16 @@ const dashboard = {
             }
         }
     },
+    toggleInvitation: async (dashId, userId) => {
+        try {
+            return await axios().put(`dashboard/${dashId}/${userId}`, {}, getToken());
+        } catch (error) {
+            return {
+                status : 'error',
+                message : 'fallo del servidor',
+            }
+        }
+    },
     add: async (name) => {
         try {
             const {data} = await axios().post('dashboard/create', {name}, getToken());

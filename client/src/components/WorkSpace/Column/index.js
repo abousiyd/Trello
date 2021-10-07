@@ -28,7 +28,6 @@ const Column = ({column, getDashboards}) => {
         await columnServices.save(id, columnName)
         setEditColumnId(null)
         getDashboards()
-
     }
 
     return (
@@ -46,11 +45,11 @@ const Column = ({column, getDashboards}) => {
             }
             {
                 editColumnId === column._id ? 
-                <i onClick={() => save(column._id)} className="far fa-save save-column-icon"></i> :  
-                <i onClick={() => setEditColumnId(column._id)} className="fas fa-pen edit-column-icon"></i>
+                <i onClick={() => save(column._id)} className="far fa-save save-column-icon column-actions"></i> :  
+                <i onClick={() => setEditColumnId(column._id)} className="fas fa-pen edit-column-icon column-actions"></i>
                 
             }
-            <i onClick={() => deleteColumn(column._id)} className="far fa-trash-alt remove-column-icon"></i>
+            <i onClick={() => deleteColumn(column._id)} className="far fa-trash-alt remove-column-icon column-actions"></i>
             
             <Tasks  getDashboards={getDashboards} column={column}/>
             

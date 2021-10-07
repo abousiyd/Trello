@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react";
 import Column from "./Column";
 import AddColumn from './AddColumn/index'
+import Search from './Search/index'
 import './index.css'
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 
 const WorkSpace = ({activeDash, getDashboards}) => {
     const {name, user, users, columns, _id: activeDashId} = activeDash
-console.log(users, 456776545678, 777 )
+
     const [newColumns, setColumns] = useState(columns)
 
 
@@ -55,7 +56,7 @@ console.log(users, 456776545678, 777 )
             <div className="main-user">
                 <h2 className="main-user-text">Tablero creado por: {user.name.toUpperCase()} </h2>
                 <span className='main-nav'>
-                    <img className='main-nav-user' src={`http://joeschmoe.io/api/v1/${user.name}`}/>
+                    <img className='main-nav-user' src={`http://joeschmoe.io/api/v1/${user.name}`} title={user.name}/>
                 </span>
 
             </div>
@@ -64,19 +65,12 @@ console.log(users, 456776545678, 777 )
                 {(users || []).map(participante => (<div key={participante._id}> 
                     <img className='main-img' 
                         src={`http://joeschmoe.io/api/v1/${participante.name}`}
-                        alt={participante.name}
+                        title={participante.name}
                     />
                 </div>
                 ))}
-
             </div>
-
-            <div>
-                <button> Invetar</button>
-            </div>
-            
-            
-
+            <Search activeDashId={activeDashId}  participantes={users} getDashboards={getDashboards}/>
         </div>
 
         <DragDropContext onDragEnd={onDragEnd}>
@@ -84,7 +78,6 @@ console.log(users, 456776545678, 777 )
                 {(newColumns || []).map(column => (
                     <Droppable droppableId={column._id} key={column._id}>
                         {(provided, snapshot) => {
-                            console.log(column._id, 9998, 777)
                             return <div  {...provided.droppableProps} ref={provided.innerRef} key={column._id} className='formColumn'>
                                 {<Column  getDashboards={getDashboards} column={column} />}
                             </ div>

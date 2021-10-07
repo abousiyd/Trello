@@ -1,12 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 .main_Nav {
-    background-color: black;
+    background-color: #e2e4e6;
 }
-
 .main_NavBar {
     display: flex;
     list-style: none;
-    font-size: 1em;
+    font-size: 10px;
     margin: 0;
+    padding: 0;
 }
 .main_Nav_Title {
     margin-left: auto;  
@@ -16,25 +17,37 @@
     margin-left: auto;
     padding: 20px; 
     margin-right: 0;
-    background-color: rgb(156, 156, 141);
 }
 .main_Nav_User {
     border-radius: 50px;
-    padding: 20px;
     height: 15px;
-    width: 15px;
+    margin: 10px;
+}
+.main_nav_img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #8fa3af;
 }
 
 .main_Nav_Home {
+    font-family: 'Roboto';
     padding: 20px;
+    transition-duration: 0.4s;
 }
 
-span {
+span, a {
+    font-family: 'Roboto';
     text-decoration: none;
-    color: white;
-}
-
-a {
     text-decoration: none;
-    color: white;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
 }
+.nav-header a:hover, .nav-header span:hover, nav-header:hover {
+    border: none;
+    height: 0px;
+    padding-bottom: 15px;
+    border-radius: 2px;
+    border-bottom: 5px solid #333;
+} 

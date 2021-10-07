@@ -1,6 +1,7 @@
 .Register_Container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     height: 100vh;
@@ -54,17 +55,20 @@
     font-size: 1rem;
     transition: .3s;
 }
-.Register_Btn {
+.Register_Btn{
     background: #687cec;
-    color: #FFF;
+    color: white;
     cursor: pointer;
-    padding:10px;
+    padding: 10px;
     margin: 20px 0;
     width: 60%;
     border-radius:5px;
     border:3px solid transparent;
     line-height: 24px;
     outline:none;
+}
+.Register_Btn span {
+    color: white;
 }
 .Register_Btn:hover {
     background: #3c53d4;
@@ -80,6 +84,13 @@
     background-color: #ebf4ff;
 }
 
+.Register_Error {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #f44336;
+}
 @media only screen and (max-width: 600px) {
     .Register_Img  {
       display: none;
@@ -89,6 +100,3 @@
     width: 70%;
 }
 
-.Register_Error {
-    color: red;
-}

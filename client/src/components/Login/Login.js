@@ -24,25 +24,28 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const {status, message} = await Auth.login({email, password});
-
         if(status === 'success') {
-            history.push("/dashboards"); //en caso de logiar
+            history.push("/dashboards"); 
         }
         if(message) {
             setError(message)
+            setTimeout( () => {
+                setError(null)
+            }, 4000 )
         }
     }
 
     return (
         <form className='login_Container' onSubmit={handleSubmit} >
-
+            {error && 
+                <span className='Register_Error'> Warning! &nbsp; {error}</span>
+            }
             <div className='login_Container_Auth'>
                 <div className='login_Inputs'>
-                    {error && <p className='login_Error'>{error}</p>}
                     <h1 className='login_Title'>Login</h1>
                     <input 
                         className='login_Input' 
-                        type='text' 
+                        type='email' 
                         placeholder='Email' 
                         name='email'
                         onChange={handleInputChange} 

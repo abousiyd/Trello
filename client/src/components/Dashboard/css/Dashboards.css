@@ -1,21 +1,19 @@
 
 body {
-  background: #eceef1;
   margin: 0;
 }
-
 .app {
     width: 100%;
     display: flex;
 }
 .dash_container {
-    width: 200px;
+    min-width: 25vh;
     height: 100vh;
     background-color: #fff;
+    overflow-y: scroll;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);
 }
 .dash_header {
-    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,34 +25,44 @@ body {
 }
 .dash_cards {
     margin-top: 20px;
-    /* width: 100%; */
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .dash_card {
+    cursor: pointer;
     min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     width: 90%;
     margin: 10px;
-    font-size: .8em; 
-    background: whitesmoke;
+    font-size: 10px;
+    color: #333; 
+    background-color: #e2e4e6;
+    border-radius: 3px;
     position: relative;
 }
-.edit-icon {
-    color: teal;
+.actiones {
+    visibility: hidden;
+}
+.dash_card:hover .actiones {
+    visibility: visible;
+}
+.edit-icon, .save-icon {
     position: absolute;
+    color: #333; 
+    font-size: 15px;
     bottom: 0;
     right: 0;
     margin: 10px;
 }
-.trash-icon{
-    color: crimson;
+.remove-icon{
     position: absolute;
+    color: #333; 
+    font-size: 15px;
     top: 0;
     right: 0;
     margin: 10px;
@@ -64,3 +72,28 @@ body {
     flex-direction: column;
     width: 100%;
 }
+.dash_input {
+    color: #333;
+	font-size: 14px;
+	width: 80%;
+	border: 2px solid rgb(150, 213, 241);
+	border-radius: 5px;
+	font-weight: 600;
+	height: 30px;
+	margin: 0px 15px 0px 0px;
+	text-align: center;
+}
+/*---------- scroll ---------*/
+#style-2::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+	border-radius: 10px;
+}
+#style-2::-webkit-scrollbar {
+	width: 15px;
+}
+#style-2::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+	background-color: #e2e4e6;
+}
+
