@@ -1,7 +1,7 @@
 
 # WILLDO
 
-#### WILLDO APP: is an online tool to manage project tasks in a simple and very visual way. It allows managing the tracking of errors and incidents of projects. ... the application can be used to manage and improve processes, thanks to its functions for organizing workflows.
+#### WILLDO app is an online tool to manage project tasks in a simple and very visual way. It allows managing the tracking of errors and incidents of projects. ... the application can be used to manage and improve processes, thanks to its functions for organizing workflows.
 
 <br/>
 
@@ -60,5 +60,6 @@
 * Refactor.
 * Edit profile.
 * Protect routes.
+* Add tags.
 
 
