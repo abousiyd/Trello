@@ -6,6 +6,9 @@
 <br/>
 
 ![Test Image 3](img/login.png) 
+
+<br/>
+
 ![Test Image 3](img/dash.png)
 
 <br/>
@@ -27,29 +30,31 @@
 * Invite participants.
 * Remove participants.
 
-
-## Use Cases
-
-![Test Image 3](img/usecases.png)
-
-## Workflow
-
-![Test Image 3](img/workflow.png)
-
-# Technical Description
 <br/>
-
-## Blocks
-
-![Test Image 3](img/Blocks.png)
 
 ## Data Model
 
 ![Test Image 3](img/datamodel.png)
 
-# In progress
+## Workflow
 
-## Pending:
+![Test Image 3](img/workflow.png)
+
+## Use Cases
+
+![Test Image 3](img/usecases.png)
+
+
+## Blocks
+
+![Test Image 3](img/Blocks.png)
+
+# Technical Description
+<br/>
+
+## In progress
+
+### Pending:
 
 * Add Tests.
 * Refactor.
