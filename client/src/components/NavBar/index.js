@@ -25,7 +25,7 @@ const NavBar = () => {
         <nav className='main_Nav'>
             <ul className="main_NavBar">
                 <li className='main_Nav_Home nav-header'><a href="">Home</a></li>
-                <li className='main_Nav_Title nav-header'><a href="">Trello</a></li>
+                <li className='main_Nav_Title nav-header'><a href="">WILLDO</a></li>
                 <li className='main_Nav_Logout nav-header'><span onClick={() => logout()}>Salir</span></li>
                 <li className="main_Nav_User">
                     <img className='main_nav_img' 

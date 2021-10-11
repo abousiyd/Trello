@@ -2,10 +2,11 @@ import React, {useState} from "react"
 import { Draggable } from "react-beautiful-dnd";
 import AddTask from "../AddTask/index"
 import taskServices from '../../../services/Task'
+import Card from '../Card'
 import './index.css'
 
 const Tasks = ({column, getDashboards }) => {
-    
+
     const [editTaskId, setEditTaskId] = useState(null)
     const [taskName, setTaskName] = useState(null)
     const [taskDescripcion, setTaskDescripcion] = useState(null)
@@ -47,9 +48,7 @@ const Tasks = ({column, getDashboards }) => {
                                 <input className='task-input-title-descripcion' onChange={handleInputChangeDes} value={taskDescripcion === null ? task.title : taskDescripcion} type='text'  placeholder='name' /> 
                             </>
                             :
-                                <div className='task-list-items'>
-                                    <h3 className='task-list-title'>{task.title}</h3>
-                                </div>
+                            <Card task={task} />
                         }
                         {
                             editTaskId === task._id ?
